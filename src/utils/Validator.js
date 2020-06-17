@@ -1,4 +1,3 @@
-import Response from './Response';
 import '@hapi/joi';
 
 export default async (schema, toValidate, res, next) => {
@@ -6,6 +5,10 @@ export default async (schema, toValidate, res, next) => {
     await schema.validateAsync(toValidate);
     next();
   } catch (error) {
-    return Response.validationError(res, error.message);
+    return res.status(422).json({
+      status: 422,
+      message: error.message,
+      error: 'Validation Error'
+    });
   }
 };

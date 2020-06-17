@@ -13,13 +13,11 @@ export default {
     .required(),
   name: Joi.string().alphanum().min(3).max(30).required(),
   text: Joi.string().required(),
-  status: Joi.string().valid('Active', 'Inactive').required(),
   number: Joi.number().min(1).required(),
   nameOptional: Joi.string().alphanum().min(3).max(30).optional(),
   url: Joi.string().uri().required(),
   array: Joi.array().required(),
   boolean: Joi.boolean().required(),
-  json: Joi.object().required(),
   password: Joi.string()
     .regex(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!_`,/@#\-"=:;~<>'\$%\^&\*\?\|\+\(\)\[\]\{}\.])(?=.{8,})/
@@ -36,10 +34,6 @@ export default {
   phone: Joi.string()
     .regex(/^[0-9]{11}/)
     .optional()
-    .error(
-      new Error(
-        'phoneNumber field needs to have a 11 chars and they must all be numbers'
-      )
-    ),
+    .error(new Error('Phone number must be 11 digits')),
   stringOptional: Joi.string().trim().min(1).optional()
 };

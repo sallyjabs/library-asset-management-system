@@ -1,9 +1,9 @@
 {
-  "name": "starthub",
+  "name": "lams",
   "version": "1.0.0",
-  "description": "starthub is a platform for advertising the projects done by start.ng interns during the program",
+  "description": "LAMS",
   "main": "index.js",
-  "author": "Team Rio",
+  "author": "Enter_name",
   "engines": {
     "node": "12.16.x",
     "yarn": ">=1.15.2 || 1.22.x"
@@ -27,9 +27,7 @@
     "express": "^4.17.1",
     "express-joi-validator": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "^3.5.7",
-    "mongoose": "^5.9.10",
-    "redis": "^3.0.2"
+    "mongoose": "^5.9.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
